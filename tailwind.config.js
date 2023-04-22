@@ -11,7 +11,12 @@ module.exports = {
         'pink2': '#F472B6',
       },
       fontFamily: {
-        'sans': ['Roboto']
+        'sans': ['Roboto'],
+        'poppins': ['Poppins'],
+      },
+      screens:{
+        'xsm': {'min': '320px', 'max': '639px'},
+        'lxl': {'min': '640px', 'max': '1880px'}
       }
     },
   },
