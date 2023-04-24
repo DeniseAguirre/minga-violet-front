@@ -1,8 +1,18 @@
 import Logo from "./assets/images/Logo.png";
+import Welcome1 from "./assets/images/headerimg1.png"
+import Welcome2 from "./assets/images/headerimg2.png" 
+import ImgFooter from "./assets/images/footer2.png"
+import Facebook from "./assets/images/facebook-black.png"
+import Twitter from "./assets/images/twitter-black.png"
+import Vimeo from "./assets/images/vimeo-black.png"
+import Youtube from "./assets/images/youtube-black.png"
 
 import "./App.css";
+import apiUrl from "../api.js"
 
 function App() {
+  console.log(apiUrl)
+  console.log(process.env.NODE_ENV)
   return (
     <>
       {/* HOME DESKTOP */}
@@ -73,14 +83,14 @@ function App() {
 
             <div className="w-[25%] flex justify-start h-fit">
               <img
-                src="src/assets/images/headerimg1.png"
+                src={Welcome1}
                 className="w-[277px] h-[307px] object-cover"
                 alt="img1"
               />
             </div>
             <div className="w-[30%] flex justify-center">
               <img
-                src="src/assets/images/headerimg2.png"
+                src={Welcome2}
                 className="w-[180px] h-[284px] mb-4"
                 alt="img2"
               />
@@ -117,7 +127,7 @@ function App() {
         <footer ClassName="flex w-full">
           {/* <div className="bg-[url(/src/assets/images/footer.png)] bg-no-repeat bg-cover bg-center w-auto h-[336px] rounded-[0%_0%_50%_50%/_0%_0%_50%_50%] mt-[3%] p-0"></div> */}
           <img
-            src="/src/assets/images/footer2.png"
+            src={ImgFooter}
             className="w-full h-[336px] mt-[3%] object-cover"
             alt="footer one-piece"
           />
@@ -144,28 +154,28 @@ function App() {
               <div className="flex justify-between py-5 w-60">
                 <a href="#">
                   <img
-                    src="src/assets/images/facebook-black.png"
+                    src={Facebook}
                     alt="Facebook"
                     className="w-auto h-[24px]"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="src/assets/images/twitter-black.png"
+                    src={Twitter}
                     alt="Twitter"
                     className="w-auto h-[24px]"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="src/assets/images/vimeo-black.png"
+                    src={Vimeo}
                     alt="Vimeo"
                     className="w-auto h-[24px]"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="src/assets/images/youtube-black.png"
+                    src={Youtube}
                     alt="Youtube"
                     className="w-auto h-[24px]"
                   />
