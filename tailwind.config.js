@@ -15,8 +15,8 @@ module.exports = {
         'poppins': ['Poppins'],
       },
       screens:{
-        'xsm': {'min': '320px', 'max': '639px'},
-        'lxl': {'min': '640px', 'max': '1880px'}
+        'xsm': {'min': '319px', 'max': '639px'},
+        
       }
     },
   },
