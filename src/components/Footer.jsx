@@ -3,7 +3,7 @@ import Facebook from "../assets/images/facebook-black.png"
 import Twitter from "../assets/images/twitter-black.png"
 import Vimeo from "../assets/images/vimeo-black.png"
 import Youtube from "../assets/images/youtube-black.png"
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/Logo.png"
 
 export default function Footer() {
   return (
@@ -85,7 +85,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
           <hr className="mix-blend-normal opacity-20 border border-solid border-[#2B3D51] mb-[5%] mx-[9%]" />
         </footer>
   )
