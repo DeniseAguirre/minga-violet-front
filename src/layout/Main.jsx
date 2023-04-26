@@ -8,15 +8,10 @@ export default function Main({children}) {
     <>
     <div className="w-full xsm:hidden">
         <div className="px-[4rem] py-[1rem]">
-          {/* NAVBAR DESKTOP */}
           <Navbar />
-          {/* CAROUSEL DESKTOP */}
           <Carousel />
-          {/* MAIN DESKTOP */}
-          {/* <Welcome /> */}
           {children}
         </div>
-        {/* FOOTER DESKTOP */}
         <Footer />
       </div>
       </>
