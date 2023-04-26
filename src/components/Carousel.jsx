@@ -1,24 +1,50 @@
-import Welcome1 from "../assets/images/headerimg1.png"
-import Welcome2 from "../assets/images/headerimg2.png" 
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import apiUrl from '../../api' 
 
 export default function Carousel() {
+  useEffect(
+    ()=>{ axios(apiUrl+'categories').then(res=>setCategories(res.data.categories)).catch(err=>console.log(err))}, []
+  )
+
+  let [categories, setCategories] = useState([])
+  
+  let [counter,setCounter] = useState(0)
+  
+  let sumar = () => {
+    setCounter(counter+1)
+    if (counter === categories.length-1) {
+      setCounter(0)
+    }
+  }
+  let restar = () => {
+    setCounter(counter-1)
+    if (counter === 0){
+      setCounter(categories.length-1)
+    }
+  }
+  
+  const gradientStyle = {
+    backgroundImage: `linear-gradient(153deg, rgb(255, 255, 255) -13.9%, ${categories[counter]?.color} 58.69%)`,
+  }
+
   return (
-    <div className="bg-gradient-to-b at-153 from-pink1 from-(-13.9%) to-pink2 to-58.69% flex h-[16.563rem] w-full rounded-md items-end mt-6 relative">
+    <div className="flex h-[30vh] w-full rounded-md items-end mt-6 relative" style={gradientStyle}>
             <button
               className="w-[20px] h-[20px] absolute left-6 top-[50%] -translate-y-1/2 flex justify-center items-center rounded-full z-10 hover:bg-gray-200 
-            bg-white/50 shadow-lg"
+            bg-white/50 shadow-lg" onClick={restar}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="#333333"
-                class="w-[10px] h-[9px] "
+                className="w-[10px] h-[9px] "
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
                 />
               </svg>
@@ -26,15 +52,15 @@ export default function Carousel() {
 
             <button
               className="w-[20px] h-[20px] absolute right-6 top-[50%] -translate-y-1/2 flex justify-center items-center rounded-full z-10 hover:bg-gray-200 
-            bg-white/50 shadow-lg"
+            bg-white/50 shadow-lg" onClick={sumar}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="#333333"
-                class="w-[10px] h-[9px] "
+                className="w-[10px] h-[9px] "
               >
                 <path
                   strokeLinecap="round"
@@ -44,29 +70,26 @@ export default function Carousel() {
               </svg>
             </button>
 
-            <div className="w-[25%] flex justify-start h-fit">
+            <div className="w-[25%] flex justify-center">
               <img
-                src={Welcome1}
-                className="w-[277px] h-[307px] object-cover"
+                src={categories[counter]?.character_photo}
+                className="auto h-[35vh]"
                 alt="img1"
               />
             </div>
-            <div className="w-[30%] flex justify-center">
+            <div className="w-[25%] flex justify-center">
               <img
-                src={Welcome2}
-                className="w-[180px] h-[284px] mb-4"
+                src={categories[counter]?.cover_photo}
+                className="w-auto h-[32vh] mb-4 rounded-md"
                 alt="img2"
               />
             </div>
-            <div className="text-carousel flex-col w-[40%] text-white h-44 px-[3%]">
-              <h2 className="not-italic font-medium text-2xl leading-[95.19%] flex items-center; flex-none order-none grow-0 mb-3">
-                Shonen
+            <div className="text-carousel flex-col w-[35%] text-white h-full justify-center items-center pl-[5%] flex">
+              <h2 className="not-italic font-normal text-xl leading-[95.19%] self-start grow-0 mb-3">
+                {categories[counter]?.name}
               </h2>
-              <p className="text-sm font-sans font-normal not-italic leading-[95.19%] flex items-center ">
-                Is the manga that is aimed at adolescent boys. They are series
-                with large amounts of action, in which humorous situations often
-                occur. The camaraderie between members of a collective or a
-                combat team stands out.
+              <p className="text-xs font-sans font-normal not-italic leading-[95.19%] self-start">
+                {categories[counter]?.description}
               </p>
             </div>
           </div>

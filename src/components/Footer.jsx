@@ -7,11 +7,11 @@ import Logo from "../assets/images/Logo.png"
 
 export default function Footer() {
   return (
-    <footer ClassName="flex w-full">
+    <footer className="flex flex-col w-full">
           {/* <div className="bg-[url(/src/assets/images/footer.png)] bg-no-repeat bg-cover bg-center w-auto h-[336px] rounded-[0%_0%_50%_50%/_0%_0%_50%_50%] mt-[3%] p-0"></div> */}
           <img
             src={ImgFooter}
-            className="w-full h-[336px] mt-[3%] object-cover"
+            className="w-full mt-[1%] object-cover"
             alt="footer one-piece"
           />
 
@@ -34,38 +34,38 @@ export default function Footer() {
               </a>
             </div>
             <div className="w-[33%] flex flex-col items-center">
-              <div className="flex justify-between py-5 w-60">
+              <div className="flex justify-between py-5 w-52">
                 <a href="#">
                   <img
                     src={Facebook}
                     alt="Facebook"
-                    className="w-auto h-[24px]"
+                    className="w-auto h-[22px]"
                   />
                 </a>
                 <a href="#">
                   <img
                     src={Twitter}
                     alt="Twitter"
-                    className="w-auto h-[24px]"
+                    className="w-auto h-[22px]"
                   />
                 </a>
                 <a href="#">
                   <img
                     src={Vimeo}
                     alt="Vimeo"
-                    className="w-auto h-[24px]"
+                    className="w-auto h-[22px]"
                   />
                 </a>
                 <a href="#">
                   <img
                     src={Youtube}
                     alt="Youtube"
-                    className="w-auto h-[24px]"
+                    className="w-auto h-[22px]"
                   />
                 </a>
               </div>
               <div>
-                <button className="text-white not-italic font-medium text-2xl leading-[95.19%] bg-gradient-to-b at-153 from-pink1 from-(-13.9%) to-pink2 to-58.69% rounded-md flex flex-row justify-center items-center gap-2.5 w-60 h-[55px] p-4">
+                <button className="text-white not-italic font-medium text-xl leading-[95.19%] bg-gradient-to-b at-153 from-pink1 from-(-13.9%) to-pink2 to-58.69% rounded-md flex flex-row justify-center items-center gap-2.5 w-52 h-auto p-3">
                   Donate
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
