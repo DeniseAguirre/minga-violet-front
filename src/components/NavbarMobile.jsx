@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Logo from "../assets/images/Logo.png"
+import Profile from "../assets/images/profile.png"
 
 export default function NavbarMobile() {
     const [showMenu, setShowMenu] = useState(false);
@@ -29,6 +30,12 @@ export default function NavbarMobile() {
               </button>
               {showMenu && (
                 <div className="absolute m-0 p-0 top-0 left-0 w-screen h-screen bg-gradient-to-b at-153 from-pink1 from-(-13.9%) to-pink2 to-58.69% z-20">
+                  <div className="flex m-4">
+                    <img src={Profile} className="h-[46px] w-[46px] mr-2" alt="profile" />
+                    <div className="flex flex-col justify-center">
+                      <span className="text-sm text-white">Denise Aguirre Martinez</span>
+                      <span className="text-xs text-white">deniseaguirre.m@gmail.com</span>
+                    </div>
                   <button
                     onClick={handleMenuClick}
                     className="px-4 py-2 text-white absolute right-0"
@@ -48,7 +55,8 @@ export default function NavbarMobile() {
                       />
                     </svg>
                   </button>
-                  <ul className="font-semibold font-poppins pt-[2rem]">
+                  </div>
+                  <ul className="font-semibold font-poppins">
                     <li>
                       <a
                         className="flex justify-center px-4 py-2 text-white hover:bg-white hover:text-pink2 hover:rounded-md m-4"
